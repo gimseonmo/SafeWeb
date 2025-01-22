@@ -1,0 +1,36 @@
+{
+    "manifest_version": 3,
+    "name": "SafeWeb",
+    "description": "사용자가 접속하는 사이트를 실시간으로 분석하고 해당 사이트의 위험성을 알려줍니다.",
+    "version": "0.7",
+    "permissions": ["activeTab", "scripting", "tabs", "storage", "notifications", "downloads"],
+    "host_permissions": ["<all_urls>"], 
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts" : [
+        {
+            "matches" : ["<all_urls>"],
+            "js" : ["content.js"]
+        }],
+    "action": {
+        "default_popup": "index.html",
+        "default_icon": "icon/SafeWeb128.png",
+        "default_title": "SafeWeb"
+    },
+    "web_accessible_resources": [
+        {
+          "resources": ["content.js"],
+          "matches": ["<all_urls>"]
+        }],
+    "content_security_policy": {
+            "extension_pages": "script-src 'self'; object-src 'self'"
+          },
+    "icons": {
+        "16": "icon/SafeWeb16.png",
+        "48": "icon/SafeWeb48.png",
+        "128": "icon/SafeWeb128.png"
+    }
+
+
+}
