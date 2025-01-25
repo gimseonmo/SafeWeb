@@ -2,8 +2,8 @@
     "manifest_version": 3,
     "name": "SafeWeb",
     "description": "사용자가 접속하는 사이트를 실시간으로 분석하고 해당 사이트의 위험성을 알려줍니다.",
-    "version": "0.7",
-    "permissions": ["activeTab", "scripting", "tabs", "storage", "notifications", "downloads"],
+    "version": "1",
+    "permissions": ["activeTab", "tabs"],
     "host_permissions": ["<all_urls>"], 
     "background": {
         "service_worker": "background.js"
